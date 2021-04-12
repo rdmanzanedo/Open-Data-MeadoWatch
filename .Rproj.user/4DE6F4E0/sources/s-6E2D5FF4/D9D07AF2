@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1618234070480.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3728494719",
+    "id" : "D9D07AF2",
+    "lastKnownWriteTime" : 1618239528,
+    "last_content_update" : 1618239528386,
+    "path" : "C:/Users/rdman/Desktop/Open-Data-MeadoWatch/example-code.R",
+    "project_path" : "example-code.R",
+    "properties" : {
+        "cursorPosition" : "70,52",
+        "scrollLine" : "37",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
