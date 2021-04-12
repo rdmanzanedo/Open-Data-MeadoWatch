@@ -6,9 +6,9 @@
 ##load the site info for the map
 setwd("C:/Users/rdman/Desktop/Open-Data-MeadoWatch")
 MW_SiteInfo_2013_2020 <- read.csv("MW_SiteInfo_2013_2020.csv")
+head(MW_SiteInfo_2013_2020)
 library(ggmap)
 library(ggplot2)
-
 
 #define the edges of the map
 bounds <- c(left = -121.85, 
@@ -30,7 +30,7 @@ map+scale_color_gradientn(colours = rainbow(5))
 
 ##number of reports per year in both hikes
 #load reportdata
-MW_PhenoDat_2013_2019 <- read.csv("C:/Users/rdman/Desktop/MW_PhenoDat_2013_2019.csv")
+MW_PhenoDat_2013_2019 <- read.csv("MW_PhenoDat_2013_2019.csv")
 #there multiple reports per year (and potentially per day), subset to observer to make table
 reports.peryear = data.frame('year' = MW_PhenoDat_2013_2019$Year,
                              'observer' = MW_PhenoDat_2013_2019$Observer,
