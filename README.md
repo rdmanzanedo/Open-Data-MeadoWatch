@@ -29,4 +29,6 @@ PUBLICATIONS LINKED TO THE MEADOWATCH DATABASE
 
 - MW_SiteInfo_2013_2019.csv -- Latitude and longitude locatoin (WGS84), elevation and forest type for each MW site
 
-- 
+- Part 1 - Location temporal replication and species comp.R - Analyses for figure 1. 
+
+
