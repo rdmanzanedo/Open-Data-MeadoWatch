@@ -4,7 +4,7 @@
 
 ##WTA data paper potential
 ##load the site info for the map
-setwd("C:/Users/rdman/Desktop/Open-Data-MeadoWatch")
+
 MW_SiteInfo_2013_2020 <- read.csv("MW_SiteInfo_2013_2020.csv")
 head(MW_SiteInfo_2013_2020)
 library(ggmap)
