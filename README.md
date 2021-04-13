@@ -12,6 +12,8 @@ Dr. Rubén D. Manzanedo
 OTHERS OTHERS
 
 Permanent website of MeadoWatch and more info: http://www.meadowatch.org/
+https://www.youtube.com/channel/UCGBFTKxf8FIWswMDxBavpuQ/featured
+
 
 PUBLICATIONS LINKED TO THE MEADOWATCH DATABASE
 - Hille Ris Lambers, J., Cannistra, A. F., John, A., Lia, E., Manzanedo, R. D., Sethi, M., Sevigny, J., Theobald, E. J., Waugh, J. K. (IN REVIEW) Climate change impacts on natural icons: do phenological shifts threaten the relaionship between peak wildflowers and visitor satisfaction? Climate Change Ecology
@@ -22,3 +24,9 @@ PUBLICATIONS LINKED TO THE MEADOWATCH DATABASE
 
 - Wilson, A., Bacher, K., Breckheimer, I., Lundquist, J., Rochefort, R., Theobald, E., ... & HilleRisLambers, J. (2017). Monitoring wildflower phenology using traditional science, citizen science, and crowd sourcing. Park Sci, 33, 17-26.
 
+# Repository content
+- MW_PhenoDat_2013_2019.csv -- Phenological records. Infromation on date, transect id, observer, and phenological state per flowering species.
+
+- MW_SiteInfo_2013_2019.csv -- Latitude and longitude locatoin (WGS84), elevation and forest type for each MW site
+
+- 
