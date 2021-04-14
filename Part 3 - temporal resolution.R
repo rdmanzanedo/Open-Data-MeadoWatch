@@ -48,6 +48,7 @@ for (i in 2015:2019){
        xlab='Day of the year',
        ylab='Temporal frequency of Meadowatch reports (time since last report)')
   #add reference lines and indications of daily and weekly resolutions
+  print(i)
   print(mean(aa.gb.bet.days))
   abline(h=1, lty=2, lwd=0.5)
   text(30,2.5,'Daily')
@@ -75,6 +76,7 @@ for (i in 2013:2019){
        xlab='Day of the year',
        ylab='Temporal frequency of Meadowatch reports (time since last report)')
   #add reference lines and indications of daily and weekly resolutions
+  print(i)
   print(mean(aa.gb.bet.days))
   abline(h=1, lty=2, lwd=0.5)
   text(30,2.5,'Daily')
