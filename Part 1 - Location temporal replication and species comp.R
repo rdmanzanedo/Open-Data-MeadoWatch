@@ -2,7 +2,9 @@
 ###DATA COMPILED BY AJI JOHN
 ###FIGURES AND THIS ANALYSIS: RUBÉN D. MANZANEDO. APRIL 2021#########
 
-##Figure 1: Location of the plots, temporal distribution, species compositions
+###################PART 1######################
+
+##Figure 1: Location of the plots and temporal distribution
 
 #######plot location####
 
@@ -80,12 +82,14 @@ lines(Freq~year, data=subset(rep.year, transect=='Reflection Lakes'),
 text(2019.7,70, 'Glacier Basin', col='orange')
 text(2019.7,85, 'Reflection Lakes', col='dodgerblue3')
 
-##Records per each month######
+######Records per each month######
+
 #there multiple reports per year (and potentially per day), subset to observer to make table
 reports.permonth = data.frame('month' = MW_PhenoDat_2013_2019$Month,
                               'observer' = MW_PhenoDat_2013_2019$Observer,
                               'transect' = MW_PhenoDat_2013_2019$Transect,
                               'year' = MW_PhenoDat_2013_2019$Year)
+
 #remove all other duplicates
 head(reports.permonth)
 unique.reports2=unique(reports.permonth)
@@ -97,11 +101,12 @@ rep.month$month = as.numeric(rep.month$month)
 
 
 #plot GB number of reports per year and month
-
+#generate a ramp palette for colors and define line width
 colfunc <- colorRampPalette(c("red", "blue"), interpolate="spline")
 coloring = colfunc(8)
 lining = 1
 
+#plot Glacier basin as lines 'b'
 par(mfcol=c(1,2))
 plot(Freq~month, 
      data=subset(rep.month, transect=='Glacier Basin' & year == '2013'),
@@ -114,7 +119,7 @@ plot(Freq~month,
      main='Glacier Basin',
      lwd=lining,
      pch=20)
-
+#define x labels
 axis(1, at= 1:6, labels=c('May',
              'June',
              'July',
@@ -123,6 +128,7 @@ axis(1, at= 1:6, labels=c('May',
              'October'))
 axis(2)
 box()
+#add lines per years
 lines (Freq~month,
        subset(rep.month, transect=='Glacier Basin' & year == '2014'),
        col = coloring[2],
@@ -164,6 +170,7 @@ lines (Freq~month,
        bg = coloring[7],
        lwd=lining,
        pch=26)
+#add the legend
 legend('topleft',
        legend=as.character(2013:2019),
        col=c(coloring[1:7]),
@@ -172,7 +179,7 @@ legend('topleft',
        box.lwd=0)
 
 
-###same for reflection lakes
+###exact same for reflection lakes
 plot(Freq~month, 
      data=subset(rep.month, transect=='Reflection Lakes' & year == '2013'),
      type='b',
@@ -184,7 +191,6 @@ plot(Freq~month,
      main='Reflection Lakes',
      lwd=lining,
      pch=20)
-
 axis(1, at= 1:6, labels=c('May',
                           'June',
                           'July',
@@ -235,3 +241,4 @@ lines (Freq~month,
        pch=26)
 
 
+####END OF CODE
