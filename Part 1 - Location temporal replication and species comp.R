@@ -81,4 +81,162 @@ text(2019.7,70, 'Glacier Basin', col='orange')
 text(2019.7,85, 'Reflection Lakes', col='dodgerblue3')
 
 ##Records per each month######
+#there multiple reports per year (and potentially per day), subset to observer to make table
+reports.permonth = data.frame('month' = MW_PhenoDat_2013_2019$Month,
+                              'observer' = MW_PhenoDat_2013_2019$Observer,
+                              'transect' = MW_PhenoDat_2013_2019$Transect,
+                              'year' = MW_PhenoDat_2013_2019$Year)
+#remove all other duplicates
+head(reports.permonth)
+unique.reports2=unique(reports.permonth)
 
+#number formatting of table results and adding the month labels
+rep.month = data.frame(table(unique.reports2[,-2]))
+rep.month$Freq = as.numeric(rep.month$Freq)
+rep.month$month = as.numeric(rep.month$month)
+
+
+#plot GB number of reports per year and month
+
+colfunc <- colorRampPalette(c("red", "blue"), interpolate="spline")
+coloring = colfunc(8)
+lining = 1
+
+par(mfcol=c(1,2))
+plot(Freq~month, 
+     data=subset(rep.month, transect=='Glacier Basin' & year == '2013'),
+     type='b',
+     ylim=c(0,60),
+     col=coloring[1],
+     ylab='Number of reports per month',
+     xlab='Month',
+     axes=F,
+     main='Glacier Basin',
+     lwd=lining,
+     pch=20)
+
+axis(1, at= 1:6, labels=c('May',
+             'June',
+             'July',
+             'August',
+             'September',
+             'October'))
+axis(2)
+box()
+lines (Freq~month,
+       subset(rep.month, transect=='Glacier Basin' & year == '2014'),
+       col = coloring[2],
+       bg = coloring[2],
+       lwd=lining,
+       type='b',
+       pch=21)
+lines (Freq~month,
+       subset(rep.month, transect=='Glacier Basin' & year == '2015'),
+       col = coloring[3],
+       bg= coloring[3],
+       lwd=lining,
+       type='b',
+       pch=22)
+lines (Freq~month,
+       subset(rep.month, transect=='Glacier Basin' & year == '2016'),
+       col = coloring[4],
+       bg = coloring[4],
+       lwd=lining,
+       type='b',
+       pch=23)
+lines (Freq~month,
+       subset(rep.month, transect=='Glacier Basin' & year == '2017'),
+       col = coloring[5],
+       bg = coloring[5],
+       lwd=lining,
+       type='b',
+       pch=24)
+lines (Freq~month,
+       subset(rep.month, transect=='Glacier Basin' & year == '2018'),
+       col = coloring[6],
+       bg= coloring [6],
+       lwd=lining,
+       type='b',
+       pch=25)
+lines (Freq~month,
+       subset(rep.month, transect=='Glacier Basin' & year == '2019'),
+       col = coloring[7],
+       bg = coloring[7],
+       lwd=lining,
+       pch=26)
+legend('topleft',
+       legend=as.character(2013:2019),
+       col=c(coloring[1:7]),
+       pch=20:25,
+       lwd=2,
+       box.lwd=0)
+
+
+###same for reflection lakes
+plot(Freq~month, 
+     data=subset(rep.month, transect=='Reflection Lakes' & year == '2013'),
+     type='b',
+     ylim=c(0,60),
+     col=coloring[1],
+     ylab='Number of reports per month',
+     xlab='Month',
+     axes=F,
+     main='Reflection Lakes',
+     lwd=lining,
+     pch=20)
+
+axis(1, at= 1:6, labels=c('May',
+                          'June',
+                          'July',
+                          'August',
+                          'September',
+                          'October'))
+axis(2)
+box()
+lines (Freq~month,
+       subset(rep.month, transect=='Reflection Lakes' & year == '2014'),
+       col = coloring[2],
+       bg=coloring[2],
+       lwd=lining,
+       type='b',
+       pch=21)
+lines (Freq~month,
+       subset(rep.month, transect=='Reflection Lakes' & year == '2015'),
+       col = coloring[3],
+       bg = coloring[3],
+       lwd=lining,
+       type='b',
+       pch=22)
+lines (Freq~month,
+       subset(rep.month, transect=='Reflection Lakes' & year == '2016'),
+       col = coloring[4],
+       bg = coloring[4],
+       lwd=lining,
+       type='b',
+       pch=23)
+lines (Freq~month,
+       subset(rep.month, transect=='Reflection Lakes' & year == '2017'),
+       col = coloring[5],
+       bg= coloring[5],
+       lwd=lining,
+       type='b',
+       pch=24)
+lines (Freq~month,
+       subset(rep.month, transect=='Reflection Lakes' & year == '2018'),
+       col = coloring[6],
+       bg = coloring[6],
+       lwd=lining,
+       type='b',
+       pch=25)
+lines (Freq~month,
+       subset(rep.month, transect=='Reflection Lakes' & year == '2019'),
+       col = coloring[6],
+       lwd=lining,
+       pch=26)
+
+
+
+
+
+
+8
