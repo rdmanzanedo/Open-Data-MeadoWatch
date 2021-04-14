@@ -63,6 +63,7 @@ rep.year$year = 2013:2019
 rep.year$Freq[rep.year$Freq==0] = NA
 
 #plot
+par(mfcol=c(1,1))
 plot(Freq~year, data=subset(rep.year, transect=='Glacier Basin'), 
      pch=20,
      type='b', 
