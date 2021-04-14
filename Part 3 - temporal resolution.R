@@ -4,7 +4,7 @@
 
 ###################PART 3######################
 
-##Figure 2: Species composition of the plots
+##Figure 3: Temporal resolution of the plots
 #load report data
 MW_PhenoDat_2013_2019 <- read.csv("MW_PhenoDat_2013_2019.csv")
 head(MW_PhenoDat_2013_2019)
