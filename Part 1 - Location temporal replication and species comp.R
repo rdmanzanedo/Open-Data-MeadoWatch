@@ -235,8 +235,3 @@ lines (Freq~month,
        pch=26)
 
 
-
-
-
-
-8
