@@ -23,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -41,8 +41,8 @@
      id="namedview5100"
      showgrid="false"
      inkscape:zoom="1.058296"
-     inkscape:cx="1580.5196"
-     inkscape:cy="613.85075"
+     inkscape:cx="1699.9034"
+     inkscape:cy="641.14145"
      inkscape:window-x="635"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
@@ -14556,4 +14556,175 @@
        x="-334.95346"
        id="tspan2818-7-9-7-7"
        sodipodi:role="line">Time between reports (days)</tspan></text>
+  <text
+     id="text2820-9-1"
+     y="56.651863"
+     x="956.38379"
+     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffa300;fill-opacity:1;stroke:none;stroke-width:0.7152288"
+     xml:space="preserve"><tspan
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.7152288"
+       y="56.651863"
+       x="956.38379"
+       id="tspan2818-72-3"
+       sodipodi:role="line">D<tspan
+   style="font-size:3.28863454px;baseline-shift:sub;stroke-width:0.7152288"
+   id="tspan3556">gs</tspan> = 2.88 days </tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:0.375;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 957.25001,52.136483 h 2.82391"
+     id="path3558"
+     inkscape:connector-curvature="0" />
+  <text
+     xml:space="preserve"
+     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffa300;fill-opacity:1;stroke:none;stroke-width:0.7152288"
+     x="1095.8838"
+     y="56.651863"
+     id="text3564"><tspan
+       sodipodi:role="line"
+       id="tspan3562"
+       x="1095.8838"
+       y="56.651863"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.7152288">D<tspan
+   id="tspan3560"
+   style="font-size:3.28863454px;baseline-shift:sub;stroke-width:0.7152288">gs</tspan> = 2.12 days </tspan></text>
+  <path
+     inkscape:connector-curvature="0"
+     id="path3566"
+     d="m 1096.75,52.136483 h 2.8239"
+     style="fill:none;stroke:#000000;stroke-width:0.375;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  <text
+     id="text3572"
+     y="56.651863"
+     x="1235.3838"
+     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffa300;fill-opacity:1;stroke:none;stroke-width:0.7152288"
+     xml:space="preserve"><tspan
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.7152288"
+       y="56.651863"
+       x="1235.3838"
+       id="tspan3570"
+       sodipodi:role="line">D<tspan
+   style="font-size:3.28863454px;baseline-shift:sub;stroke-width:0.7152288"
+   id="tspan3568">gs</tspan> = 1.82  days</tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:0.375;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 1236.25,52.136483 h 2.8239"
+     id="path3574"
+     inkscape:connector-curvature="0" />
+  <text
+     xml:space="preserve"
+     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffa300;fill-opacity:1;stroke:none;stroke-width:0.7152288"
+     x="956.38379"
+     y="139.15187"
+     id="text3580"><tspan
+       sodipodi:role="line"
+       id="tspan3578"
+       x="956.38379"
+       y="139.15187"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.7152288">D<tspan
+   id="tspan3576"
+   style="font-size:3.28863454px;baseline-shift:sub;stroke-width:0.7152288">gs</tspan> = 2.20 days </tspan></text>
+  <text
+     id="text3586"
+     y="139.15187"
+     x="1095.8838"
+     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffa300;fill-opacity:1;stroke:none;stroke-width:0.7152288"
+     xml:space="preserve"><tspan
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.7152288"
+       y="139.15187"
+       x="1095.8838"
+       id="tspan3584"
+       sodipodi:role="line">D<tspan
+   style="font-size:3.28863454px;baseline-shift:sub;stroke-width:0.7152288"
+   id="tspan3582">gs</tspan> = 1.69 days </tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffa300;fill-opacity:1;stroke:none;stroke-width:0.7152288"
+     x="1235.3838"
+     y="139.15187"
+     id="text3592"><tspan
+       sodipodi:role="line"
+       id="tspan3590"
+       x="1235.3838"
+       y="139.15187"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.7152288">D<tspan
+   id="tspan3588"
+   style="font-size:3.28863454px;baseline-shift:sub;stroke-width:0.7152288">gs</tspan> = 1.35  days</tspan></text>
+  <text
+     id="text3598"
+     y="221.65187"
+     x="956.38379"
+     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffa300;fill-opacity:1;stroke:none;stroke-width:0.7152288"
+     xml:space="preserve"><tspan
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.7152288"
+       y="221.65187"
+       x="956.38379"
+       id="tspan3596"
+       sodipodi:role="line">D<tspan
+   style="font-size:3.28863454px;baseline-shift:sub;stroke-width:0.7152288"
+   id="tspan3594">gs</tspan> = 1.29 days </tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffa300;fill-opacity:1;stroke:none;stroke-width:0.7152288"
+     x="1095.8838"
+     y="221.65187"
+     id="text3604"><tspan
+       sodipodi:role="line"
+       id="tspan3602"
+       x="1095.8838"
+       y="221.65187"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.7152288">D<tspan
+   id="tspan3600"
+   style="font-size:3.28863454px;baseline-shift:sub;stroke-width:0.7152288">gs</tspan> = 1.92 days </tspan></text>
+  <text
+     id="text3610"
+     y="221.65187"
+     x="1235.3838"
+     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffa300;fill-opacity:1;stroke:none;stroke-width:0.7152288"
+     xml:space="preserve"><tspan
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.7152288"
+       y="221.65187"
+       x="1235.3838"
+       id="tspan3608"
+       sodipodi:role="line">D<tspan
+   style="font-size:3.28863454px;baseline-shift:sub;stroke-width:0.7152288"
+   id="tspan3606">gs</tspan> = 1.91 days</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffa300;fill-opacity:1;stroke:none;stroke-width:0.7152288"
+     x="956.38379"
+     y="302.65189"
+     id="text3616"><tspan
+       sodipodi:role="line"
+       id="tspan3614"
+       x="956.38379"
+       y="302.65189"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.7152288">D<tspan
+   id="tspan3612"
+   style="font-size:3.28863454px;baseline-shift:sub;stroke-width:0.7152288">gs</tspan> = 1.57 days </tspan></text>
+  <text
+     id="text3622"
+     y="302.65189"
+     x="1095.8838"
+     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffa300;fill-opacity:1;stroke:none;stroke-width:0.7152288"
+     xml:space="preserve"><tspan
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.7152288"
+       y="302.65189"
+       x="1095.8838"
+       id="tspan3620"
+       sodipodi:role="line">D<tspan
+   style="font-size:3.28863454px;baseline-shift:sub;stroke-width:0.7152288"
+   id="tspan3618">gs</tspan> = 1.56 days </tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffa300;fill-opacity:1;stroke:none;stroke-width:0.7152288"
+     x="1235.3838"
+     y="302.65189"
+     id="text3628"><tspan
+       sodipodi:role="line"
+       id="tspan3626"
+       x="1235.3838"
+       y="302.65189"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.05943823px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.7152288">D<tspan
+   id="tspan3624"
+   style="font-size:3.28863454px;baseline-shift:sub;stroke-width:0.7152288">gs</tspan> = 1.63  days</tspan></text>
 </svg>
