@@ -53,8 +53,6 @@ non.sci.assessment = data.frame('Date' = cit.gb$Date,
 togetherness = merge(sci.assessment, non.sci.assessment,all = F)
 head(togetherness)
 
-print('hey')
-
 #let's define a function to calculate some main agreement matrices 
 #we can also introduce kappa, if that is more informative
 agreement.sci.cit = function(dataset, phenostate){
