@@ -99,7 +99,7 @@ plot(accuracy.rl~position.sp, species,
      xlab='Species',
      ylab='Metric value')
 axis(1, labels=unique(species$species),
-     at=c(1:length(unique(species$species))),
+     at=unique(as.numeric(position.sp)),
      las=2)
 axis(2)
 box()
@@ -121,7 +121,7 @@ plot(sensitivity.rl~position.sp, species,
      xlab='Species',
      ylab='Metric value')
 axis(1, labels=unique(species$species),
-     at=c(1:length(unique(species$species))),
+     at=unique(as.numeric(position.sp)),
      las=2)
 axis(2)
 box()
@@ -143,7 +143,7 @@ plot(specificity.rl~position.sp, species,
      xlab='Species',
      ylab='Metric value')
 axis(1, labels=unique(species$species),
-     at=c(1:length(unique(species$species))),
+     at=unique(as.numeric(position.sp)),
      las=2)
 axis(2)
 box()
@@ -153,6 +153,4 @@ points(specificity.gb~position.sp, species,
        cex=2,
        lwd=0.5)
 
-
-####CONFLICT ON THE SPECIES NAMES!!! CORRECT!!!
 ##END OF CODE
