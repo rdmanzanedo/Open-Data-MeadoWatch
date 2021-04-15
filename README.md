@@ -31,6 +31,15 @@ RAW DATA:
 - MW_SiteInfo_2013_2019.csv -- Latitude and longitude locatoin (WGS84), elevation and forest type for each MW site
 
 R SCRIPTS:
-- Part 1 - Location temporal replication and species comp.R - Analyses for figure 1. 
+- Part 1 - Location temporal replication and species comp.R - Analyses for figure 1a,b,c. 
+- Part 2 - species composition.R - Analyses for Figure 2b
+- Part 3 - temporal resolution.R - Analyses for Figure 3
+- Part 4 - comparison scientists citizens.R - Analyses for table X, and X, and Figures 4 and SX.
+
+FIGURES (SVG and PNG):
+- All in folder 'Exported figures'
+
+MANUSCRIPT
+- XXXXX.doc manuscript versions
 
 
