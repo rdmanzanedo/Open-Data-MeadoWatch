@@ -19,13 +19,13 @@ par(cex.lab=1.2)
 
 #here we have to first pair each scientist obvservation with observations on the very same day (more flexible?)
 
-#split in scientsists and citizens
+#split in scientists and citizens
 scientists = subset(MW_PhenoDat_2013_2019, MW_PhenoDat_2013_2019$QA.QC ==1)
 citizens = subset(MW_PhenoDat_2013_2019, MW_PhenoDat_2013_2019$QA.QC == 0)
 
 #and also in tracks, to pair identical situations
 sci.gb = subset(scientists, scientists$Transect == "Glacier Basin")
-cit.gb = subset(non.scientists, non.scientists$Transect == "Glacier Basin")
+cit.gb = subset(citizens, citizens$Transect == "Glacier Basin")
 
 sci.rl = subset(scientists, scientists$Transect == "Reflection Lakes")
 cit.rl = subset(citizens, citizens$Transect == "Reflection Lakes")
@@ -41,13 +41,13 @@ sci.assessment = data.frame('Date' = sci.gb$Date,
                             'sci.Flowering' = sci.gb$Flower,
                             'sci.Fruiting' = sci.gb$Fruit,
                             'sci.Seeding' = sci.gb$Disperse)
-non.sci.assessment = data.frame('Date' = non.sci.gb$Date,
-                            'Species' = non.sci.gb$Species,
-                            'Plot' = non.sci.gb$Site_Code,
-                            'cit.Budding' = non.sci.gb$Bud,
-                            'cit.Flowering' = non.sci.gb$Flower,
-                            'cit.Fruiting' = non.sci.gb$Fruit,
-                            'cit.Seeding' = non.sci.gb$Disperse)
+non.sci.assessment = data.frame('Date' = cit.gb$Date,
+                            'Species' = cit.gb$Species,
+                            'Plot' = cit.gb$Site_Code,
+                            'cit.Budding' = cit.gb$Bud,
+                            'cit.Flowering' = cit.gb$Flower,
+                            'cit.Fruiting' = cit.gb$Fruit,
+                            'cit.Seeding' = cit.gb$Disperse)
 
 #merge removing the incomparables (date, species, and plot need to be identical)
 togetherness = merge(sci.assessment, non.sci.assessment,all = F)
