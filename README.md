@@ -40,6 +40,6 @@ FIGURES (SVG and PNG):
 - All in folder 'Exported figures'
 
 MANUSCRIPT
-- XXXXX.doc manuscript versions
+- First draft_data_paper_MW.docx - Manuscript versions (currently in google docs: https://docs.google.com/document/d/101CBT2GUFirWMFm_pHwYSdolv_xV4OsDa3H95RNpcmU/edit?usp=sharing)
 
 
