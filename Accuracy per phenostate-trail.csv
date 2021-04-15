@@ -1,0 +1,5 @@
+,accuracy.rl,accuracy.gb,sensitivity.rl,sensitivity.gb,specificity.rl,specificity.gb
+budding,0.874,0.825,0.69,0.717,0.927,0.884
+flowering,0.899,0.893,0.748,0.795,0.943,0.935
+fruiting,0.881,0.886,0.749,0.69,0.923,0.927
+seeding,0.903,0.93,0.578,0.457,0.957,0.962

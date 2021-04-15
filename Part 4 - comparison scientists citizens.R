@@ -18,7 +18,6 @@ par(las=1)
 par(cex.lab=1.2)
 
 #here we have to first pair each scientist obvservation with observations on the very same day (more flexible?)
-
 #split in scientists and citizens
 scientists = subset(MW_PhenoDat_2013_2019, MW_PhenoDat_2013_2019$QA.QC ==1)
 citizens = subset(MW_PhenoDat_2013_2019, MW_PhenoDat_2013_2019$QA.QC == 0)
@@ -30,30 +29,44 @@ cit.gb = subset(citizens, citizens$Transect == "Glacier Basin")
 sci.rl = subset(scientists, scientists$Transect == "Reflection Lakes")
 cit.rl = subset(citizens, citizens$Transect == "Reflection Lakes")
 
-
-##GLACIER BASIN
-
+######CONFUSION MATRICES AND ACCURACY PER TRAIL#######
 #let's keep the variables of importance for each
-sci.assessment = data.frame('Date' = sci.gb$Date,
+sci.assessment.gb = data.frame('Date' = sci.gb$Date,
                             'Species' = sci.gb$Species,
                             'Plot' = sci.gb$Site_Code,
                             'sci.Budding' = sci.gb$Bud,
                             'sci.Flowering' = sci.gb$Flower,
                             'sci.Fruiting' = sci.gb$Fruit,
                             'sci.Seeding' = sci.gb$Disperse)
-non.sci.assessment = data.frame('Date' = cit.gb$Date,
+non.sci.assessment.gb = data.frame('Date' = cit.gb$Date,
                             'Species' = cit.gb$Species,
                             'Plot' = cit.gb$Site_Code,
                             'cit.Budding' = cit.gb$Bud,
                             'cit.Flowering' = cit.gb$Flower,
                             'cit.Fruiting' = cit.gb$Fruit,
                             'cit.Seeding' = cit.gb$Disperse)
+#same for reflection lakes
+sci.assessment.rl = data.frame('Date' = sci.rl$Date,
+                               'Species' = sci.rl$Species,
+                               'Plot' = sci.rl$Site_Code,
+                               'sci.Budding' = sci.rl$Bud,
+                               'sci.Flowering' = sci.rl$Flower,
+                               'sci.Fruiting' = sci.rl$Fruit,
+                               'sci.Seeding' = sci.rl$Disperse)
+non.sci.assessment.rl = data.frame('Date' = cit.rl$Date,
+                                   'Species' = cit.rl$Species,
+                                   'Plot' = cit.rl$Site_Code,
+                                   'cit.Budding' = cit.rl$Bud,
+                                   'cit.Flowering' = cit.rl$Flower,
+                                   'cit.Fruiting' = cit.rl$Fruit,
+                                   'cit.Seeding' = cit.rl$Disperse)
 
 #merge removing the incomparables (date, species, and plot need to be identical)
-togetherness = merge(sci.assessment, non.sci.assessment,all = F)
-head(togetherness)
+togetherness.gb = merge(sci.assessment.gb, non.sci.assessment.gb,all = F)
+togetherness.rl = merge(sci.assessment.rl, non.sci.assessment.rl, all=F)
 
-#let's define a function to calculate some main agreement matrices 
+
+#let's define a function to calculate the confusion matrix and some main agreement metrics 
 #we can also introduce kappa, if that is more informative
 agreement.sci.cit = function(dataset, phenostate){
   #define the phenostate to study
@@ -82,19 +95,40 @@ agreement.sci.cit = function(dataset, phenostate){
   print(c('specificity =', spe))
 }
 
+#caculate for each state
+agreement.sci.cit(togetherness.gb,'budding')
+agreement.sci.cit(togetherness.gb,'flowering')
+agreement.sci.cit(togetherness.gb,'fruiting')
+agreement.sci.cit(togetherness.gb,'seeding')
 
-agreement.sci.cit(togetherness,'budding')
-agreement.sci.cit(togetherness,'flowering')
-agreement.sci.cit(togetherness,'fruiting')
-agreement.sci.cit(togetherness,'seeding')
+agreement.sci.cit(togetherness.rl,'budding')
+agreement.sci.cit(togetherness.rl,'flowering')
+agreement.sci.cit(togetherness.rl,'fruiting')
+agreement.sci.cit(togetherness.rl,'seeding')
 
-
+#Is accuracy different between species?
 #we can quickly check the differences between species, for example in flowering id
 
-ls.sp = names(table(togetherness$Species))
+ls.sp.gb = names(table(togetherness.gb$Species))
+ls.sp.rl = names(table(togetherness.rl$Species))
+#GB
 for (i in 1:11){
-  sps = subset(togetherness, togetherness$Species == ls.sp[i])
-  print(ls.sp[i])
+  sps = subset(togetherness.gb, togetherness.gb$Species == ls.sp.gb[i])
+  print(ls.sp.gb[i])
   agreement.sci.cit(sps, 'budding')
+  agreement.sci.cit(sps, 'flowering')
+  agreement.sci.cit(sps, 'fruiting')
+  agreement.sci.cit(sps, 'seeding')
 }
 
+#RL
+for(i in 1:11){
+  sps = subset(togetherness.rl, togetherness.rl$Species == ls.sp.rl[i])
+  print(ls.sp.rl[i])
+  agreement.sci.cit(sps, 'budding')
+  agreement.sci.cit(sps, 'flowering')
+  agreement.sci.cit(sps, 'fruiting')
+  agreement.sci.cit(sps, 'seeding')
+}
+
+##END OF CODE#####
