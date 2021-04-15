@@ -153,4 +153,6 @@ points(specificity.gb~position.sp, species,
        cex=2,
        lwd=0.5)
 
+
+####CONFLICT ON THE SPECIES!!! CORRECT
 ##END OF CODE
