@@ -86,11 +86,14 @@ legend('bottomright',
 species = read.csv('Accuracy per species.csv')
 head(species)
 position.sp = as.numeric(as.factor(species$species))
+pch.vector = length(species$phenostate)/4
 
+color.orange = rgb(255/255,165/255,0/255,0.4)
+color.blue = rgb(79/255,148/255,205/255,0.6)
 #ACCURACIES
 plot(accuracy.rl~position.sp, species,
-     pch=16,
-     col=rgb(0.8,0.2,0.0,0.4),
+     pch=rep(c(16,17,18,19), pch.vector),
+     col=color.orange,
      lwd=0.5,
      cex=2,
      ylim=c(0,1),
@@ -104,15 +107,15 @@ axis(1, labels=unique(species$species),
 axis(2)
 box()
 points(accuracy.gb~position.sp, species,
-       pch=16,
-       col=rgb(0.0,0.0,0.5,0.4),
+       pch=rep(c(16,17,18,19), pch.vector),
+       col=color.blue,
        cex=2,
        lwd=0.5)
 
 #SENSITIVITIES
 plot(sensitivity.rl~position.sp, species,
-     pch=16,
-     col=rgb(0.8,0.2,0.0,0.4),
+     pch=rep(c(16,17,18,19), pch.vector),
+     col=color.blue,
      lwd=0.5,
      cex=2,
      ylim=c(0,1),
@@ -126,15 +129,15 @@ axis(1, labels=unique(species$species),
 axis(2)
 box()
 points(sensitivity.gb~position.sp, species,
-       pch=16,
-       col=rgb(0.0,0.0,0.5,0.4),
+       pch=rep(c(16,17,18,19), pch.vector),
+       col=color.orange,
        cex=2,
        lwd=0.5)
 
 #SPECIFICITIES
 plot(specificity.rl~position.sp, species,
-     pch=16,
-     col=rgb(0.8,0.2,0.0,0.4),
+     pch=rep(c(16,17,18,19), pch.vector),
+     col=color.blue,
      lwd=0.5,
      cex=2,
      ylim=c(0,1),
@@ -148,9 +151,14 @@ axis(1, labels=unique(species$species),
 axis(2)
 box()
 points(specificity.gb~position.sp, species,
-       pch=16,
-       col=rgb(0.0,0.0,0.5,0.4),
+       pch=rep(c(16,17,18,19), pch.vector),
+       col=color.orange,
        cex=2,
        lwd=0.5)
-
+legend('bottomleft',
+       legend=c('Budding', 'Flowering','Fruiting','Seeding'),
+       pch=c(16,17,18,19),
+       lwd=1,
+       box.col='white',
+       cex=1.25)
 ##END OF CODE

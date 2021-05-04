@@ -88,14 +88,14 @@ agreement.sci.cit = function(dataset, phenostate){
   #calculate main metrics and print it, here we assume that
   #scientists define the 'true value'
   acc = ((SY.CY + SN.CN) / (SY.CY+SY.CN+SN.CY+SN.CN))
-  sen = (SY.CY / (SY.CY+SN.CY))
-  spe = (SN.CN / (SN.CN+SY.CN))
+  sen = (SY.CY / (SY.CY+SY.CN))
+  spe = (SN.CN / (SN.CN+SN.CY))
   print(c('accuracy =', acc))
   print(c('sensitivity =', sen))
   print(c('specificity =', spe))
 }
 
-#caculate for each state
+#calculate for each state
 agreement.sci.cit(togetherness.gb,'budding')
 agreement.sci.cit(togetherness.gb,'flowering')
 agreement.sci.cit(togetherness.gb,'fruiting')
