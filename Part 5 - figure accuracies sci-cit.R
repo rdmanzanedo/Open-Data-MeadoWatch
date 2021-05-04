@@ -84,6 +84,7 @@ legend('bottomright',
 ###Figure 4b: metrics per species
 #load species data
 species = read.csv('Accuracy per species.csv')
+means = read.csv('Mean_metrics_per_species.csv')
 head(species)
 position.sp = as.numeric(as.factor(species$species))
 pch.vector = length(species$phenostate)/4
@@ -111,6 +112,8 @@ points(accuracy.gb~position.sp, species,
        col=color.blue,
        cex=2,
        lwd=0.5)
+points(value~c(1:17), subset(means, means$mean.metric=='acc'))
+
 
 #SENSITIVITIES
 plot(sensitivity.rl~position.sp, species,
