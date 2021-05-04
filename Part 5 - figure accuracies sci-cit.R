@@ -112,7 +112,7 @@ points(accuracy.gb~position.sp, species,
        col=color.blue,
        cex=2,
        lwd=0.5)
-points(value~c(1:17), subset(means, means$mean.metric=='acc'))
+
 
 
 #SENSITIVITIES
