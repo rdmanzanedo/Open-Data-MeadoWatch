@@ -164,4 +164,47 @@ legend('bottomleft',
        lwd=1,
        box.col='white',
        cex=1.25)
+
+#ALTERNATIVE VERSION, SHOWING ONLY MEANS AS BARPLOTS? MAYBE WITH CIs?
+means = read.csv('Mean_metrics_per_species.csv')
+accura = subset(means, means$mean.metric=='acc')
+sensi = subset(means, means$mean.metric=='sen')
+speci = subset(means, means$mean.metric=='spe')
+
+#order in ascending order
+accura = accura[order(accura$value),]
+sensi = sensi[order(sensi$value),]
+speci = speci[order(speci$value),]
+
+
+barplot(accura$value,
+        horiz=T,
+        xlim=c(0,1),
+        names=accura$species,
+        las=2,
+        xlab='% Accuracy per species',
+        col='grey80',
+        border=F)
+box()
+   
+barplot(sensi$value,
+        horiz=T,
+        xlim=c(0,1),
+        names=sensi$species,
+        las=2,
+        xlab='% Sensitivity per species',
+        col='grey60',
+        border=F)
+box()
+
+barplot(speci$value,
+        horiz=T,
+        xlim=c(0,1),
+        names=speci$species,
+        las=2,
+        xlab='% specificity per species',
+        col='grey40',
+        border=F)
+box()
+        
 ##END OF CODE
