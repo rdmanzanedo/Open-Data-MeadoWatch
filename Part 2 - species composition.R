@@ -82,13 +82,16 @@ RL.species = alt.species[,18:30]
 GB.ordered = GB.species[,order(colnames(GB.species))]
 RL.ordered = RL.species[,order(colnames(RL.species))]
 
-#prepare color palette
+#prepare color palettes and plot 
 coloring = c('white','dodgerblue3', 'dodgerblue4')
 heatmap(GB.ordered,col = coloring, Colv = NA, Rowv=NA, scale='column')
 
 coloring = c('white','white','orange', 'darkorange')
 heatmap(RL.ordered, col=coloring, Colv = NA, Rowv=NA, scale='column')
 
+#change order and remove not present species?
+totals.GB= apply(MARGIN=1,GB.ordered, FUN='sum')
+totals.RL= apply(MARGIN=1,RL.ordered, FUN='sum')
 
 #####END OF CODE#########
 
