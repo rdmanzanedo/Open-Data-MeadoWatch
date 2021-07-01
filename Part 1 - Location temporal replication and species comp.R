@@ -1,6 +1,6 @@
 ############################DATA PAPER MEADOWATCH###################
 ###DATA COMPILED BY AJI JOHN
-###FIGURES AND THIS ANALYSIS: RUBÉN D. MANZANEDO. APRIL 2021#########
+###FIGURES AND THIS ANALYSIS: RUBÉN D. MANZANEDO. APRIL-JULY 2021#########
 
 ###################PART 1######################
 
@@ -22,7 +22,7 @@ par(tcl=-0.2)
 par(las=1)
 par(cex.lab=1.2)
 
-#define the edges of the map for the satelite image
+#define the edges of the map for the satellite image
 bounds = c(left = -121.85, 
             bottom = 46.74,
             right = -121.5,
@@ -31,7 +31,7 @@ bounds = c(left = -121.85,
 #download terrain tiles
 mtrain = get_stamenmap(bbox = bounds, maptype = "terrain", zoom = 13)
 
-#plot the satelite and locations, color according to elevation value
+#plot the satellite and locations, color according to elevation value
 map = ggmap(mtrain) +  
   geom_point(aes(y = Latitude, 
                  x = Longitude, 
@@ -83,7 +83,7 @@ lines(Freq~year, data=subset(rep.year, transect=='Reflection Lakes'),
 text(2019.7,70, 'Glacier Basin', col='orange')
 text(2019.7,85, 'Reflection Lakes', col='dodgerblue3')
 
-######Records per each month######
+######Records per month######
 
 #there multiple reports per year (and potentially per day), subset to observer to make table
 reports.permonth = data.frame('month' = MW_PhenoDat_2013_2019$Month,
@@ -110,10 +110,10 @@ lining = 1
 #plot Glacier basin as lines 'b'
 par(mfcol=c(1,2))
 plot(Freq~month, 
-     data=subset(rep.month, transect=='Glacier Basin' & year == '2013'),
+     data=subset(rep.month, transect=='Glacier Basin' & year == '2015'),
      type='b',
      ylim=c(0,60),
-     col=coloring[1],
+     col=coloring[3],
      ylab='Number of reports per month',
      xlab='Month',
      axes=F,
@@ -130,20 +130,6 @@ axis(1, at= 1:6, labels=c('May',
 axis(2)
 box()
 #add lines per years
-lines (Freq~month,
-       subset(rep.month, transect=='Glacier Basin' & year == '2014'),
-       col = coloring[2],
-       bg = coloring[2],
-       lwd=lining,
-       type='b',
-       pch=21)
-lines (Freq~month,
-       subset(rep.month, transect=='Glacier Basin' & year == '2015'),
-       col = coloring[3],
-       bg= coloring[3],
-       lwd=lining,
-       type='b',
-       pch=22)
 lines (Freq~month,
        subset(rep.month, transect=='Glacier Basin' & year == '2016'),
        col = coloring[4],
@@ -180,7 +166,7 @@ legend('topleft',
        box.lwd=0)
 
 
-###exact same for reflection lakes
+###Plot reflection lakes
 plot(Freq~month, 
      data=subset(rep.month, transect=='Reflection Lakes' & year == '2013'),
      type='b',
@@ -241,5 +227,4 @@ lines (Freq~month,
        lwd=lining,
        pch=26)
 
-
-####END OF CODE
+###END OF CODE
