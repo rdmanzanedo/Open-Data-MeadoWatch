@@ -83,24 +83,12 @@ GB.ordered = GB.species[,order(colnames(GB.species))]
 RL.ordered = RL.species[,order(colnames(RL.species))]
 
 #prepare color palette
-<<<<<<< HEAD
 coloring = c('white','dodgerblue3', 'dodgerblue4')
 heatmap(GB.ordered,col = coloring, Colv = NA, Rowv=NA, scale='column')
 
 coloring = c('white','white','orange', 'darkorange')
 heatmap(RL.ordered, col=coloring, Colv = NA, Rowv=NA, scale='column')
 
-
-=======
-
-GB.ordereddf = as.matrix(GB.ordered)
-pressenceGB = GB.ordered
-str(GB.ordereddf)
-heatmap(GB.ordereddf,col = coloring, Colv = NA, Rowv=NA, scale='row')
-
-
-?heatmap
->>>>>>> 68cb7226e13b55b933dec40c45fba1e51ecda52a
 
 #####END OF CODE#########
 
