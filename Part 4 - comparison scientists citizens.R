@@ -10,7 +10,7 @@
 MW_PhenoDat_2013_2019 <- read.csv("MW_PhenoDat_2013_2019.csv")
 head(MW_PhenoDat_2013_2019)
 
-#graphical parameters
+#basic graphical parameters
 par(bty="o")
 par(lwd=2)
 par(tcl=-0.2)
