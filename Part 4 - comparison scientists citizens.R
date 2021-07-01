@@ -1,6 +1,6 @@
 ############################DATA PAPER MEADOWATCH###################
 ###DATA COMPILED BY AJI JOHN
-###FIGURES AND THIS ANALYSIS: RUBÉN D. MANZANEDO. APRIL 2021#########
+###FIGURES AND THIS ANALYSIS: RUBÉN D. MANZANEDO. APRIL-JULY 2021#########
 
 ###################PART 4######################
 
