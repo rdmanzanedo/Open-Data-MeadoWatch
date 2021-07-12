@@ -1,9 +1,9 @@
-#########################################
-# MeadoWatch WTA Analysis - Case study  #
-# Adapted by Aji John                   #
-# original by Alessio Benedetti         #
-# ui.R file                             #
-#########################################
+##################################
+# MeadoWatch WTA Analysis
+# Adapted by Aji John #
+# original by Alessio Benedetti           #
+# ui.R file                      #
+##################################
 
 library(leaflet)
 library(shinydashboard)
@@ -48,7 +48,6 @@ shinyUI(fluidPage(
                        menuItem("Home", tabName = "home", icon = icon("home")),
                        menuItem("Hikes", tabName = "map", icon = icon("thumbtack")),
                        menuItem("Phenology at sites", tabName = "table", icon = icon("table")),
-                       menuItem("Peak flowering", tabName = "flowers", icon = icon("bar-chart-o")),
                        menuItem("Model fitting curves", tabName = "charts", icon = icon("stats", lib = "glyphicon")),
                        menuItem("Flowering richness", tabName = "richness", icon = icon("map marked alt")),
                        menuItem("MW WTA analysis", tabName = "wta", icon = icon("random", lib = "glyphicon")),
@@ -57,7 +56,7 @@ shinyUI(fluidPage(
                          "<br><br><br><br><br><br><br><br><br>",
                          "<table style='margin-left:auto; margin-right:auto;'>",
                          "<tr>",
-                          "</tr>",
+                         "</tr>",
                          "</table>",
                          "<br>"),
                          HTML(paste0(
@@ -100,13 +99,13 @@ shinyUI(fluidPage(
                 
                 # include the WTA Analysis
                 includeMarkdown("www/WTA.md")
-
+                
                 
         ),
         
         tabItem(tabName = "charts",
                 
-                # ggplot2 for flowers - peak
+                # ggplot2 species charts section
                 includeMarkdown("www/charts.md"),
                 fluidRow(column(3, uiOutput("categorySelectComboChart"))),
                 column(6, plotOutput("ggplot2Group1") %>% withSpinner(color = "green")),
@@ -114,15 +113,6 @@ shinyUI(fluidPage(
                 
         ), 
         
-        tabItem(tabName = "flowers",
-                
-                # ggplot2 species charts section
-                includeMarkdown("www/flowers.md"),
-                fluidRow(column(3, uiOutput("categorySelectComboChart"))),
-                column(6, plotOutput("ggplot2Group1") %>% withSpinner(color = "green")),
-                column(6, plotOutput("ggplot2Group2") %>% withSpinner(color = "green"))
-                
-        ), 
         tabItem(tabName = "richness",
                 
                 # richness 
