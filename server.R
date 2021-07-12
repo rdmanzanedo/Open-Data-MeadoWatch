@@ -10,8 +10,6 @@ library(tidyverse)
 library(leaflet.extras)
 library(rvest)
 
-
-
 #####################
 # SUPPORT FUNCTIONS #
 #####################
@@ -23,7 +21,7 @@ library(rvest)
 
 
 PhenoSite_clean <- read.csv("data/PhenoSite_Masked.csv", header=TRUE)
-print('loaded')
+
 MW_PhenoSite_2013_2018 <- read_csv("data/MW_SiteDat_2013_2018.csv")
 
 AllSites_2018 <- MW_PhenoSite_2013_2018 %>% 
@@ -35,7 +33,7 @@ meadow_species <- unique(PhenoSite_clean$Species)
 fr <- read_csv('data/FloweringRichness.csv')
 years <- unique(fp$year)
 
-# tidy & enrich dataframe
+# tidy & enrich datafram
 
 # support structures
 
@@ -76,10 +74,10 @@ shinyServer(function(input, output) {
   output$phenoSiteDataTable <- renderDataTable(
     PhenoSite_clean,
     filter = "top"
-
+    
   )
   
-
+  
   # ggplot2 charts
   output$categorySelectComboChart <- renderUI({
     selectInput("selectedCategoryChart","Select a species:", meadow_species)
@@ -93,7 +91,7 @@ shinyServer(function(input, output) {
   
   output$ggplot2Group1 <- renderPlot({
     
-     
+    
     g1 <- speciesGgplot1() %>% 
       filter(trail=='RL') %>% 
       mutate(yearf = as.factor(year)) %>% 
