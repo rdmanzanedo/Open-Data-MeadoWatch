@@ -83,10 +83,10 @@ GB.ordered = GB.species[,order(colnames(GB.species))]
 RL.ordered = RL.species[,order(colnames(RL.species))]
 
 #prepare color palettes and plot 
-coloring = c('white','dodgerblue3', 'dodgerblue4')
+coloring = c('white','white','orange', 'darkorange')
 heatmap(GB.ordered,col = coloring, Colv = NA, Rowv=NA, scale='column')
 
-coloring = c('white','white','orange', 'darkorange')
+coloring = c('white','dodgerblue3', 'dodgerblue4')
 heatmap(RL.ordered, col=coloring, Colv = NA, Rowv=NA, scale='column')
 
 #change order and remove not present species?
