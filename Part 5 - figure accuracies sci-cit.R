@@ -17,7 +17,7 @@ par(tcl=-0.2)
 par(las=1)
 par(cex.lab=1.2)
 
-#Figure 4a: metrics per phenostate
+#Figure 4a: metrics per phenostate 
 #set the x-axes values for plotting and a small offset for the different hikes
 phenostates$Y = 1:4
 phenostates$Y2 = phenostates$Y+0.2
