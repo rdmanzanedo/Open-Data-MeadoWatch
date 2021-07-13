@@ -1,6 +1,6 @@
 ############################DATA PAPER MEADOWATCH###################
 ###DATA COMPILED BY AJI JOHN
-###FIGURES AND THIS ANALYSIS: RUBÉN D. MANZANEDO. APRIL 2021#########
+###FIGURES AND THIS ANALYSIS: RUBÉN D. MANZANEDO. APRIL-JULY 2021#########
 
 ###################PART 5######################
 
@@ -54,7 +54,6 @@ points(sensitivity.gb~Y2, phenostates,
        bg='steelblue3',
        cex=2,
        lwd=0.5)
-
 points(specificity.rl~Y, phenostates,
        pch=23,
        bg='orange',
@@ -171,12 +170,12 @@ accura = subset(means, means$mean.metric=='acc')
 sensi = subset(means, means$mean.metric=='sen')
 speci = subset(means, means$mean.metric=='spe')
 
-#order in ascending order
+#sort in ascending order
 accura = accura[order(accura$value),]
 sensi = sensi[order(sensi$value),]
 speci = speci[order(speci$value),]
 
-
+#plot each metric as barplot
 barplot(accura$value,
         horiz=T,
         xlim=c(0,1),

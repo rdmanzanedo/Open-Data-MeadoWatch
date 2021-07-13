@@ -16,7 +16,7 @@ https://www.youtube.com/channel/UCGBFTKxf8FIWswMDxBavpuQ/featured
 
 
 PUBLICATIONS LINKED TO THE MEADOWATCH DATABASE
-- Hille Ris Lambers, J., Cannistra, A. F., John, A., Lia, E., Manzanedo, R. D., Sethi, M., Sevigny, J., Theobald, E. J., Waugh, J. K. (IN REVIEW) Climate change impacts on natural icons: do phenological shifts threaten the relationship between peak wildflowers and visitor satisfaction? Climate Change Ecology
+- Hille Ris Lambers, J., Cannistra, A. F., John, A., Lia, E., Manzanedo, R. D., Sethi, M., Sevigny, J., Theobald, E. J., Waugh, J. K. (In press) Climate change impacts on natural icons: do phenological shifts threaten the relationship between peak wildflowers and visitor satisfaction? Climate Change Ecology
 
 - Breckheimer, I. K., Theobald, E. J., Cristea, N. C., Wilson, A. K., Lundquist, J. D., Rochefort, R. M., & HilleRisLambers, J. (2020). Crowd‐sourced data reveal social–ecological mismatches in phenology driven by climate. Frontiers in Ecology and the Environment, 18(2), 76-82.
 
@@ -34,7 +34,8 @@ R SCRIPTS:
 - Part 1 - Location temporal replication and species comp.R - Analyses for figure 1a,b,c. 
 - Part 2 - species composition.R - Analyses for Figure 2b
 - Part 3 - temporal resolution.R - Analyses for Figure 3
-- Part 4 - comparison scientists citizens.R - Analyses for table X, and X, and Figures 4 and SX.
+- Part 4 - comparison scientists citizens.R - Functions and selecting
+- Part 5 - Comparison scientists citizens 2.R - Figures 5a,b,c,d
 
 FIGURES (SVG and PNG):
 - All in folder 'Exported figures'

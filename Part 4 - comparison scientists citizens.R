@@ -1,6 +1,6 @@
 ############################DATA PAPER MEADOWATCH###################
 ###DATA COMPILED BY AJI JOHN
-###FIGURES AND THIS ANALYSIS: RUBÉN D. MANZANEDO. APRIL 2021#########
+###FIGURES AND THIS ANALYSIS: RUBÉN D. MANZANEDO. APRIL-JULY 2021#########
 
 ###################PART 4######################
 
@@ -10,14 +10,14 @@
 MW_PhenoDat_2013_2019 <- read.csv("MW_PhenoDat_2013_2019.csv")
 head(MW_PhenoDat_2013_2019)
 
-#graphical parameters
+#basic graphical parameters
 par(bty="o")
 par(lwd=2)
 par(tcl=-0.2)
 par(las=1)
 par(cex.lab=1.2)
 
-#here we have to first pair each scientist obvservation with observations on the very same day (more flexible?)
+#here we have to first pair each scientist observation with observations on the very same day and track
 #split in scientists and citizens
 scientists = subset(MW_PhenoDat_2013_2019, MW_PhenoDat_2013_2019$QA.QC ==1)
 citizens = subset(MW_PhenoDat_2013_2019, MW_PhenoDat_2013_2019$QA.QC == 0)
@@ -61,13 +61,13 @@ non.sci.assessment.rl = data.frame('Date' = cit.rl$Date,
                                    'cit.Fruiting' = cit.rl$Fruit,
                                    'cit.Seeding' = cit.rl$Disperse)
 
-#merge removing the incomparables (date, species, and plot need to be identical)
+#merge removing incomparables (date, species, and plot need to be identical match)
 togetherness.gb = merge(sci.assessment.gb, non.sci.assessment.gb,all = F)
 togetherness.rl = merge(sci.assessment.rl, non.sci.assessment.rl, all=F)
 
 
-#let's define a function to calculate the confusion matrix and some main agreement metrics 
-#we can also introduce kappa, if that is more informative
+#FUNCTION to calculate confusion matrix and some main agreement metrics#
+
 agreement.sci.cit = function(dataset, phenostate){
   #define the phenostate to study
   if(phenostate=='budding') {a=0}
@@ -86,7 +86,7 @@ agreement.sci.cit = function(dataset, phenostate){
   print(c('true neg =', SN.CN))
   
   #calculate main metrics and print it, here we assume that
-  #scientists define the 'true value'
+  #scientists define the 'true value' for the sake of the confusion matrix
   acc = ((SY.CY + SN.CN) / (SY.CY+SY.CN+SN.CY+SN.CN))
   sen = (SY.CY / (SY.CY+SY.CN))
   spe = (SN.CN / (SN.CN+SN.CY))
@@ -106,8 +106,11 @@ agreement.sci.cit(togetherness.rl,'flowering')
 agreement.sci.cit(togetherness.rl,'fruiting')
 agreement.sci.cit(togetherness.rl,'seeding')
 
-#Is accuracy different between species?
-#we can quickly check the differences between species, for example in flowering id
+#tables saved to 'accuracies and confusion matrices(from part 4 script).xlsx
+
+
+#####ACCURACZ PER SPECIES#######
+#differences between species, for example in flowering id but in all
 
 ls.sp.gb = names(table(togetherness.gb$Species))
 ls.sp.rl = names(table(togetherness.rl$Species))
@@ -131,4 +134,5 @@ for(i in 1:11){
   agreement.sci.cit(sps, 'seeding')
 }
 
+#tables saved to 'accuracies and confusion matrices(from part 4 script).xlsx
 ##END OF CODE#####
