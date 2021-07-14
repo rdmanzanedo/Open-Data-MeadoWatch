@@ -32,7 +32,8 @@ plot(accuracy.rl~Y, phenostates,
      main='Assessment scientists vs. citizens',
      axes=F,
      xlab='Phenostates',
-     ylab='Metric value')
+     ylab='Metric value',
+     col='white')
 axis(1, labels=c('Budding','Flowering','Fruiting','Seeding'),
      at=c(1:4))
 axis(2)
@@ -41,30 +42,33 @@ points(accuracy.gb~Y2, phenostates,
        pch=21,
        bg='steelblue3',
        cex=2,
-       lwd=0.5)
-
+       lwd=0,
+       col='white')
 points(sensitivity.rl~Y, phenostates,
      pch=24,
      bg='orange',
      lwd=0.5,
      cex=2,
-     ylim=c(0,1))
+     ylim=c(0,1),
+     col='white')
 points(sensitivity.gb~Y2, phenostates,
        pch=24,
        bg='steelblue3',
        cex=2,
-       lwd=0.5)
+       lwd=0.5,
+       col='white')
 points(specificity.rl~Y, phenostates,
        pch=23,
        bg='orange',
        lwd=0.5,
        cex=2,
-       ylim=c(0,1))
+       col='white')
 points(specificity.gb~Y2, phenostates,
        pch=23,
        bg='steelblue3',
        cex=2,
-       lwd=0.5)
+       lwd=0,
+       col='white')
 ##add the legends
 legend('bottomleft',
        legend=c('Accuracy', 'Sensitivity', 'Specificity'),
@@ -79,6 +83,43 @@ legend('bottomright',
        lwd=1,
        box.col='white',
        cex=1.25)
+#add mean values
+lines(x=c(0.9,1.1), y=c(rep(mean(as.numeric(phenostates[1,c(2,4,6)])),2)), 
+       pch=8,
+       col='orange',
+      lwd=3)
+lines(x=c(1.1,1.3), y=c(rep(mean(as.numeric(phenostates[1,c(3,5,7)])),2)), 
+      pch=8,
+      col='steelblue3',
+      lwd=3)
+
+lines(x=c(1.9,2.1), y=c(rep(mean(as.numeric(phenostates[2,c(2,4,6)])),2)), 
+      pch=8,
+      col='orange',
+      lwd=3)
+lines(x=c(2.1,2.3), y=c(rep(mean(as.numeric(phenostates[2,c(3,5,7)])),2)), 
+      pch=8,
+      col='steelblue3',
+      lwd=3)
+
+lines(x=c(2.9,3.1), y=c(rep(mean(as.numeric(phenostates[3,c(2,4,6)])),2)), 
+      pch=8,
+      col='orange',
+      lwd=3)
+lines(x=c(3.1,3.3), y=c(rep(mean(as.numeric(phenostates[3,c(3,5,7)])),2)), 
+      pch=8,
+      col='steelblue3',
+      lwd=3)
+
+lines(x=c(3.9,4.1), y=c(rep(mean(as.numeric(phenostates[4,c(2,4,6)])),2)), 
+      pch=8,
+      col='orange',
+      lwd=3)
+lines(x=c(4.1,4.3), y=c(rep(mean(as.numeric(phenostates[4,c(3,5,7)])),2)), 
+      pch=8,
+      col='steelblue3',
+      lwd=3)
+
 
 ###Figure 4b: metrics per species
 #load species data
@@ -90,6 +131,8 @@ pch.vector = length(species$phenostate)/4
 
 color.orange = rgb(255/255,165/255,0/255,0.4)
 color.blue = rgb(79/255,148/255,205/255,0.6)
+
+
 #ACCURACIES
 plot(accuracy.rl~position.sp, species,
      pch=rep(c(16,17,18,19), pch.vector),
@@ -111,6 +154,16 @@ points(accuracy.gb~position.sp, species,
        col=color.blue,
        cex=2,
        lwd=0.5)
+
+#add the mean values per species 
+means = read.csv('Mean_metrics_per_species.csv')
+accura = subset(means, means$mean.metric=='acc')
+#sort in alphabetical order
+accura = accura[order(accura$species),]
+points(accura$value, 
+      pch=8,
+      col='red',
+      lwd=3)
 
 
 
@@ -135,6 +188,15 @@ points(sensitivity.gb~position.sp, species,
        col=color.orange,
        cex=2,
        lwd=0.5)
+
+#add the mean values per species 
+sen = subset(means, means$mean.metric=='sen')
+#sort in alphabetical order
+sen = sen[order(sen$species),]
+points(sen$value, 
+       pch=8,
+       col='red',
+       lwd=3)
 
 #SPECIFICITIES
 plot(specificity.rl~position.sp, species,
@@ -164,46 +226,14 @@ legend('bottomleft',
        box.col='white',
        cex=1.25)
 
-#ALTERNATIVE VERSION, SHOWING ONLY MEANS AS BARPLOTS? MAYBE WITH CIs?
-means = read.csv('Mean_metrics_per_species.csv')
-accura = subset(means, means$mean.metric=='acc')
-sensi = subset(means, means$mean.metric=='sen')
-speci = subset(means, means$mean.metric=='spe')
+#add the mean values per species 
+spe = subset(means, means$mean.metric=='spe')
+#sort in alphabetical order
+spe = spe[order(spe$species),]
+points(spe$value, 
+       pch=8,
+       col='red',
+       lwd=3)
 
-#sort in ascending order
-accura = accura[order(accura$value),]
-sensi = sensi[order(sensi$value),]
-speci = speci[order(speci$value),]
 
-#plot each metric as barplot
-barplot(accura$value,
-        horiz=T,
-        xlim=c(0,1),
-        names=accura$species,
-        las=2,
-        xlab='% Accuracy per species',
-        col='grey80',
-        border=F)
-box()
-   
-barplot(sensi$value,
-        horiz=T,
-        xlim=c(0,1),
-        names=sensi$species,
-        las=2,
-        xlab='% Sensitivity per species',
-        col='grey60',
-        border=F)
-box()
-
-barplot(speci$value,
-        horiz=T,
-        xlim=c(0,1),
-        names=speci$species,
-        las=2,
-        xlab='% specificity per species',
-        col='grey40',
-        border=F)
-box()
-        
 ##END OF CODE
