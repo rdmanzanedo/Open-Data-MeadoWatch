@@ -211,7 +211,7 @@ plot(specificity.rl~position.sp, species,
      ylab='Metric value')
 axis(1, labels=unique(species$species),
      at=unique(as.numeric(position.sp)),
-     las=2)
+     las=2)dd
 axis(2)
 box()
 points(specificity.gb~position.sp, species,
