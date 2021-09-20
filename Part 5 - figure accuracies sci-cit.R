@@ -22,53 +22,73 @@ par(cex.lab=1.2)
 phenostates$Y = 1:4
 phenostates$Y2 = phenostates$Y+0.2
 #plot each phenostate
-plot(accuracy.rl~Y, phenostates,
+plot(Y~accuracy.rl, phenostates,
      pch=21,
      bg='orange',
      lwd=0.5,
      cex=2,
-     ylim=c(0,1),
-     xlim=c(0.5,4.5),
+     xlim=c(0,1),
+     ylim=c(0.5,4.5),
      main='Assessment scientists vs. citizens',
      axes=F,
-     xlab='Phenostates',
-     ylab='Metric value',
-     col='white')
-axis(1, labels=c('Budding','Flowering','Fruiting','Seeding'),
+     ylab='Phenostates',
+     xlab='Value (%)',
+     col=rgb(0,0,0,0))
+axis(2, labels=c('Budding','Flowering','Fruiting','Seeding'),
      at=c(1:4))
-axis(2)
+axis(1)
 box()
-points(accuracy.gb~Y2, phenostates,
+points(Y~accuracy.gb, phenostates,
        pch=21,
        bg='steelblue3',
        cex=2,
        lwd=0,
-       col='white')
-points(sensitivity.rl~Y, phenostates,
+       col=rgb(0,0,0,0))
+points(Y~sensitivity.rl, phenostates,
      pch=24,
      bg='orange',
      lwd=0.5,
      cex=2,
      ylim=c(0,1),
-     col='white')
-points(sensitivity.gb~Y2, phenostates,
+     col=rgb(0,0,0,0))
+points(Y~sensitivity.gb, phenostates,
        pch=24,
        bg='steelblue3',
        cex=2,
        lwd=0.5,
-       col='white')
-points(specificity.rl~Y, phenostates,
+       col=rgb(0,0,0,0))
+points(Y~specificity.rl, phenostates,
        pch=23,
        bg='orange',
        lwd=0.5,
        cex=2,
-       col='white')
-points(specificity.gb~Y2, phenostates,
+       col=rgb(0,0,0,0))
+points(Y~specificity.gb, phenostates,
        pch=23,
        bg='steelblue3',
        cex=2,
        lwd=0,
-       col='white')
+       col=rgb(0,0,0,0))
+
+##means +- standard errors
+head(phenostates)
+phenostates$mean = apply(phenostates[,2:7],1, FUN='mean')
+phenostates$sd = apply(phenostates[,2:7],1, FUN='sd')
+phenostates$se = (phenostates$sd) / (sqrt(phenostates$mean))
+
+#plot them
+points(Y~mean, phenostates,
+       pch=16,
+       bg='black',
+       cex=3,
+       lwd=0)
+for (i in 1:4){
+  lines(x=c((phenostates$mean[i]-phenostates$se[i]),(phenostates$mean[i]+phenostates$se[i])), 
+            y=c(i,i))
+
+}
+
+
 ##add the legends
 legend('bottomleft',
        legend=c('Accuracy', 'Sensitivity', 'Specificity'),
