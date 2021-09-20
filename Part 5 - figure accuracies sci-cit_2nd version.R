@@ -16,6 +16,9 @@ par(lwd=2)
 par(tcl=-0.2)
 par(las=1)
 par(cex.lab=1.2)
+par(mfcol=c(2,2))
+color.orange = rgb(255/255,165/255,0/255,0.4)
+color.blue = rgb(79/255,148/255,205/255,0.6)
 
 #Figure 4a: metrics per phenostate 
 #set the x-axes values for plotting and a small offset for the different hikes
@@ -24,9 +27,9 @@ phenostates$Y2 = phenostates$Y+0.2
 #plot each phenostate
 plot(Y~accuracy.rl, phenostates,
      pch=21,
-     bg='orange',
+     bg=color.orange,
      lwd=0.5,
-     cex=2,
+     cex=1.5,
      xlim=c(0,1),
      ylim=c(0.5,4.5),
      main='Assessment scientists vs. citizens',
@@ -40,33 +43,33 @@ axis(1)
 box()
 points(Y~accuracy.gb, phenostates,
        pch=21,
-       bg='steelblue3',
-       cex=2,
+       bg=color.blue,
+       cex=1.5,
        lwd=0,
        col=rgb(0,0,0,0))
 points(Y~sensitivity.rl, phenostates,
      pch=24,
-     bg='orange',
+     bg=color.orange,
      lwd=0.5,
-     cex=2,
+     cex=1.5,
      ylim=c(0,1),
      col=rgb(0,0,0,0))
 points(Y~sensitivity.gb, phenostates,
        pch=24,
-       bg='steelblue3',
-       cex=2,
+       bg=color.blue,
+       cex=1.5,
        lwd=0.5,
        col=rgb(0,0,0,0))
 points(Y~specificity.rl, phenostates,
        pch=23,
-       bg='orange',
+       bg=color.orange,
        lwd=0.5,
-       cex=2,
+       cex=1.5,
        col=rgb(0,0,0,0))
 points(Y~specificity.gb, phenostates,
        pch=23,
-       bg='steelblue3',
-       cex=2,
+       bg=color.blue,
+       cex=1.5,
        lwd=0,
        col=rgb(0,0,0,0))
 
@@ -85,7 +88,7 @@ abline(v=mean(phenostates$mean),
 points(Y~mean, phenostates,
        pch=16,
        col='grey30',
-       cex=3,
+       cex=2,
        lwd=0)
 for (i in 1:4){
   lines(x=c((phenostates$mean[i]-phenostates$se[i]),(phenostates$mean[i]+phenostates$se[i])), 
@@ -102,8 +105,7 @@ head(species)
 position.sp = as.numeric(as.factor(species$species))
 pch.vector = length(species$phenostate)/4
 
-color.orange = rgb(255/255,165/255,0/255,0.4)
-color.blue = rgb(79/255,148/255,205/255,0.6)
+
 
 ##before anything, calculate means +- standard errors per species
 head(species)
@@ -157,7 +159,7 @@ plot(position.sp~accuracy.rl, species,
      main='Accuracy per species',
      axes=F,
      ylab='Species',
-     xlab='Value (%)')
+     xlab='Accuracy (%)')
 axis(2, labels=unique(species$species),
      at=unique(as.numeric(position.sp)),
      las=2)
@@ -172,7 +174,7 @@ points(position.sp~accuracy.gb, species,
 #add reference line of mean
 abline(v=mean(means.errs$mean.acc),
        lty=2,
-       lwd=0.51)
+       lwd=0.5)
 
 #plot them
 points(1:17~means.errs$mean.acc,
@@ -199,7 +201,7 @@ plot(position.sp~sensitivity.rl, species,
      main='Sensitivity per species',
      axes=F,
      ylab='Species',
-     xlab='Value (%)')
+     xlab='Sensitivity (%)')
 axis(2, labels=unique(species$species),
      at=unique(as.numeric(position.sp)),
      las=2)
@@ -239,7 +241,7 @@ plot(position.sp~specificity.rl, species,
      main='Specificity per species',
      axes=F,
      ylab='Species',
-     xlab='Value (%)')
+     xlab='Specificity (%)')
 axis(2, labels=unique(species$species),
      at=unique(as.numeric(position.sp)),
      las=2)
