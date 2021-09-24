@@ -27,13 +27,14 @@ MW_PhenoSite_2013_2018 <- read_csv("data/MW_SiteDat_2013_2018.csv")
 AllSites_2018 <- MW_PhenoSite_2013_2018 %>% 
   filter(Year == 2018 & Transect %in% c( "Reflection Lakes","Glacier Basin")) %>% 
   as.data.frame()
+
 fp <- read_csv('data/FloweringProbabilities.csv')
 meadow_species <- unique(PhenoSite_clean$Species)
 
 fr <- read_csv('data/FloweringRichness.csv')
 years <- unique(fp$year)
 
-# tidy & enrich datafram
+# tidy & enrich dataframe
 
 # support structures
 
@@ -95,7 +96,15 @@ shinyServer(function(input, output) {
     g1 <- speciesGgplot1() %>% 
       filter(trail=='RL') %>% 
       mutate(yearf = as.factor(year)) %>% 
-      ggplot() + geom_point(aes_string(x="DOY",y=input$selectedCategoryChart,color="yearf")) + labs(color='Year' , title="Species - [Refections Lakes Trail]", x ="Day of the year (DOY)", y = paste0("P (flowering ) of ", input$selectedCategoryChart)) +theme_classic() 
+      ggplot() + 
+               geom_point(aes_string(x="DOY",y=input$selectedCategoryChart,color="yearf")) +
+      geom_vline(aes(xintercept=152),colour="black", linetype="dashed") +   
+      annotate(geom = "text", x = 152, y = 0.1, label = "June", color = "black",angle = 90)+
+      geom_vline(aes(xintercept=182),colour="black", linetype="dashed") +
+      annotate(geom = "text", x = 182, y = 0.1, label = "July", color = "black",angle = 90)+
+      geom_vline(aes(xintercept=213),colour="black", linetype="dashed") +
+      annotate(geom = "text", x = 213, y = 0.1, label = "August", color = "black",angle = 90)+
+      labs(color='Year' , title="Species - [Refections Lakes Trail]", x ="Day of the year (DOY)", y = paste0("P (flowering ) of ", input$selectedCategoryChart)) +theme_classic() 
     print(g1)
     
   })
@@ -106,7 +115,14 @@ shinyServer(function(input, output) {
     g2 <- speciesGgplot2() %>% 
       filter(trail=='GB') %>% 
       mutate(yearf = as.factor(year)) %>% 
-      ggplot() + geom_point(aes_string(x="DOY",y=input$selectedCategoryChart,color="yearf")) + labs(color='Year',title="Species - [Glacier Basin]", x ="Day of the year (DOY)", y = paste0("P (flowering ) of ", input$selectedCategoryChart)) +theme_classic() 
+      ggplot() + geom_point(aes_string(x="DOY",y=input$selectedCategoryChart,color="yearf")) +
+      geom_vline(aes(xintercept=152),colour="black", linetype="dashed") +   
+      annotate(geom = "text", x = 152, y = 0.1, label = "June", color = "black",angle = 90)+
+      geom_vline(aes(xintercept=182),colour="black", linetype="dashed") +
+      annotate(geom = "text", x = 182, y = 0.1, label = "July", color = "black",angle = 90)+
+      geom_vline(aes(xintercept=213),colour="black", linetype="dashed") +
+      annotate(geom = "text", x = 213, y = 0.1, label = "August", color = "black",angle = 90)+
+      labs(color='Year',title="Species - [Glacier Basin]", x ="Day of the year (DOY)", y = paste0("P (flowering ) of ", input$selectedCategoryChart)) +theme_classic() 
     print(g2)
     
   })
@@ -123,12 +139,22 @@ shinyServer(function(input, output) {
   
   
   output$ggplot2Group3 <- renderPlot({
-    
+    print(input$yearsCombo)
     
     g3 <- speciesGgplot3() %>% 
       filter(trail=='RL') %>% 
       mutate(yearf = as.factor(year)) %>% 
-      ggplot() + geom_smooth(aes_string(x="DOY",y="rich",color="yearf")) + labs(color='Year' , title="Richness - [Refections Lakes Trail]", x ="Day of the year (DOY)", y = paste0(" ", "")) +theme_classic() 
+      filter(year == as.numeric(input$yearsCombo) )%>% 
+      ggplot() + geom_smooth(aes_string(x="DOY",y="rich",color="yearf")) +
+      geom_vline(aes(xintercept=152),colour="black", linetype="dashed") +   
+      annotate(geom = "text", x = 152, y = 0.1, label = "June", color = "black",angle = 90)+
+      geom_vline(aes(xintercept=182),colour="black", linetype="dashed") +
+      annotate(geom = "text", x = 182, y = 0.1, label = "July", color = "black",angle = 90)+
+      geom_vline(aes(xintercept=213),colour="black", linetype="dashed") +
+      annotate(geom = "text", x = 213, y = 0.1, label = "August", color = "black",angle = 90)+
+      labs(color='Year' , title="Richness - [Refections Lakes Trail]", x ="Day of the year (DOY)", y = paste0(" ", "")) +
+      theme_classic() 
+    
     print(g3)
     
   })
@@ -139,7 +165,16 @@ shinyServer(function(input, output) {
     g4 <- speciesGgplot4() %>% 
       filter(trail=='GB') %>% 
       mutate(yearf = as.factor(year)) %>% 
-      ggplot() + geom_smooth(aes_string(x="DOY",y="rich",color="yearf")) + labs(color='Year',title="Richness - [Glacier Basin]", x ="Day of the year (DOY)", y = paste0("", "")) +theme_classic() 
+      filter(year == as.numeric(input$yearsCombo) )%>% 
+      ggplot() + geom_smooth(aes_string(x="DOY",y="rich",color="yearf")) +
+      geom_vline(aes(xintercept=152),colour="black", linetype="dashed") +   
+      annotate(geom = "text", x = 152, y = 0.1, label = "June", color = "black",angle = 90)+
+      geom_vline(aes(xintercept=182),colour="black", linetype="dashed") +
+      annotate(geom = "text", x = 182, y = 0.1, label = "July", color = "black",angle = 90)+
+      geom_vline(aes(xintercept=213),colour="black", linetype="dashed") +
+      annotate(geom = "text", x = 213, y = 0.1, label = "August", color = "black",angle = 90)+
+      labs(color='Year',title="Richness - [Glacier Basin]", x ="Day of the year (DOY)", y = paste0("", "")) +
+      theme_classic() 
     print(g4)
     
   })  

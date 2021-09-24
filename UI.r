@@ -119,7 +119,7 @@ shinyUI(fluidPage(
                 includeMarkdown("www/richness.md"),
                 fluidRow(
                   column(3, uiOutput("yearSelectCombo")),
-                  column(3, uiOutput("speciesCombo"))
+                 # column(3, uiOutput("speciesCombo"))
                 ),
                 fluidRow(
                   column(6, plotOutput("ggplot2Group3") %>% withSpinner(color = "green")),
