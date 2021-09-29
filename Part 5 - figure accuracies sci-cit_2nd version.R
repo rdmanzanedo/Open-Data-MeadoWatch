@@ -208,7 +208,7 @@ axis(2, labels=unique(species$species),
 axis(1)
 box()
 points(position.sp~sensitivity.gb, species,
-       pch=rep(c(16,17,18,19), pch.vector),
+       pch=rep(c(16,17,18,18), pch.vector),
        col=color.blue,
        cex=1.5,
        lwd=0.5)
