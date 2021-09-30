@@ -1,10 +1,11 @@
 ############################DATA PAPER MEADOWATCH###################
 ###DATA COMPILED BY AJI JOHN
-###FIGURES AND THIS ANALYSIS: RUBÉN D. MANZANEDO. APRIL 2021#########
+###FIGURES AND THIS ANALYSIS: RUBÉN D. MANZANEDO. APRIL-JULY 2021#########
 
 ###################PART 3######################
 
-##Figure 3: Temporal resolution of the plots
+##Temporal resolution of the plots
+##not included in final manuscript. However, ####values are those in Table 1###
 #load report data
 MW_PhenoDat_2013_2019 <- read.csv("MW_PhenoDat_2013_2019.csv")
 head(MW_PhenoDat_2013_2019)

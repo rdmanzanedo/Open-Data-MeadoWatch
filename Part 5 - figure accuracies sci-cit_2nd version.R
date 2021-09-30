@@ -6,7 +6,7 @@
 
 ##Continuation of Figure 4: Data validation comparison of scientist vs. citizen scientists
 
-#load accuracies data per phenostate and species
+#load accuracies data per phenostate and species from part 5
 phenostates = read.csv('Accuracy per phenostate-trail.csv')
 head(phenostates)
 
@@ -20,7 +20,7 @@ par(mfcol=c(2,2))
 color.orange = rgb(255/255,165/255,0/255,0.4)
 color.blue = rgb(79/255,148/255,205/255,0.6)
 
-#Figure 4a: metrics per phenostate 
+#######Figure 4a: metrics per phenostate #########
 #set the x-axes values for plotting and a small offset for the different hikes
 phenostates$Y = 1:4
 phenostates$Y2 = phenostates$Y+0.2
@@ -97,7 +97,7 @@ for (i in 1:4){
 }
 
 
-###Figure 4b: metrics per species
+###Figure 4b: metrics per species###########
 #load species data
 species = read.csv('Accuracy per species.csv')
 means = read.csv('Mean_metrics_per_species.csv')
@@ -149,7 +149,7 @@ for (i in 1:length(levels(as.factor(species$species)))){
 means.errs  
 
 
-#plot ACCURACIES
+######Figure 4c: accuracies########
 plot(position.sp~accuracy.rl, species,
      pch=rep(c(16,17,18,19), pch.vector),
      col=color.orange,
@@ -191,7 +191,7 @@ for (i in 1:17){
 
 
 
-#plot SENSITIVITY
+#Figure 4d sensitivities#####
 plot(position.sp~sensitivity.rl, species,
      pch=rep(c(16,17,18,19), pch.vector),
      col=color.orange,
@@ -208,7 +208,7 @@ axis(2, labels=unique(species$species),
 axis(1)
 box()
 points(position.sp~sensitivity.gb, species,
-       pch=rep(c(16,17,18,18), pch.vector),
+       pch=rep(c(16,17,18,19), pch.vector),
        col=color.blue,
        cex=1.5,
        lwd=0.5)
@@ -270,6 +270,6 @@ for (i in 1:17){
         col='grey30')
 }
 
-
+#figure exported to inkscape to be sorted by value in each of them individually.
 ##END OF CODE
 

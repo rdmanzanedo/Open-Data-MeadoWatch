@@ -66,7 +66,7 @@ togetherness.gb = merge(sci.assessment.gb, non.sci.assessment.gb,all = F)
 togetherness.rl = merge(sci.assessment.rl, non.sci.assessment.rl, all=F)
 
 
-#FUNCTION to calculate confusion matrix and some main agreement metrics#
+#FUNCTION to calculate confusion matrix and main agreement metrics#
 
 agreement.sci.cit = function(dataset, phenostate){
   #define the phenostate to study
@@ -109,8 +109,8 @@ agreement.sci.cit(togetherness.rl,'seeding')
 #tables saved to 'accuracies and confusion matrices(from part 4 script).xlsx
 
 
-#####ACCURACZ PER SPECIES#######
-#differences between species, for example in flowering id but in all
+#####ACCURACY PER SPECIES#######
+#differences between specie
 
 ls.sp.gb = names(table(togetherness.gb$Species))
 ls.sp.rl = names(table(togetherness.rl$Species))
