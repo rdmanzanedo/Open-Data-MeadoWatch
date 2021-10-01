@@ -34,10 +34,17 @@ PUBLICATIONS LINKED TO THE MEADOWATCH DATABASE
 - Wilson, A., Bacher, K., Breckheimer, I., Lundquist, J., Rochefort, R., Theobald, E., ... & HilleRisLambers, J. (2017). Monitoring wildflower phenology using traditional science, citizen science, and crowd sourcing. Park Sci, 33, 17-26.
 
 # Repository content
-RAW DATA:
+RAW DATA. Please check the 'Final data' folder:
 - MW_PhenoDat_2013_2019.csv -- Phenological records. Information on date, transect id, observer, and phenological state per flowering species.
 
 - MW_SiteInfo_2013_2019.csv -- Latitude and longitude locatoin (WGS84), elevation and forest type for each MW site
+
+- MW_metadata.csv -- metadata information for all variables and files. As well as equivalency in species names (4 letter code to full botanical name)
+
+- MW_SDDall.csv -- snow dissapearance data and minimum soil temperature data
+ 
+- MW_Phenocurves.csv -- parameters and data to reconstruct the curves in HilleRisLambers et al. 2021 and in the data exploration tool
+
 
 R SCRIPTS:
 - Part 1 - Location temporal replication and species comp (Figure 1).R - Analyses for figure 1a,b,c. 
